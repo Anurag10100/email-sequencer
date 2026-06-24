@@ -69,4 +69,14 @@ Each iteration must leave the app building (`npm run build` clean) and verified 
 - Consolidated to a single dev port **5176** (`vite.config.ts` strictPort + README) and killed the stray 5173
   duplicate server that was confusing which URL to open.
 
+### Design-system elevation ✅ (verified)
+- Loaded **Inter** (variable, optical sizing) + refined type scale, tracking, tabular numerals
+- Token system in `index.css`: layered shadows (`shadow-soft/lift/glow`), refined radii, a soft two-glow canvas, `.glass`, skeleton + motion
+- Premium **gradient sidebar** with grouped nav (Overview / Build / Engage), glowing active indicator, workspace header, live campaign card
+- Glassmorphic topbar; refined `Card` (hairline ring + soft shadow), gradient/glow `Button`, ring focus inputs, deeper modal
+- Dashboard KPI cards: bold tabular figures, gradient icon tiles, hover lift + accent glow
+
+### Still open for a future pass
+- **Dark mode (proper)** — biggest remaining "modern SaaS" gap; needs the semantic-token migration so every surface flips cleanly, then re-expose the ⌘K/topbar toggle.
+
 ## LOOP STOPPED by user request (do not auto-reschedule). Resume only on an explicit new request.

@@ -45,10 +45,10 @@ function Topbar() {
   const { view } = useUI()
   const t = TITLES[view]
   return (
-    <header className="sticky top-0 z-30 flex items-center justify-between gap-4 border-b border-slate-200/70 bg-canvas/80 px-6 py-4 backdrop-blur-md">
+    <header className="glass sticky top-0 z-30 flex items-center justify-between gap-4 border-b border-slate-200/60 px-6 py-3.5">
       <div>
-        <h1 className="text-lg font-semibold text-slate-900">{t.title}</h1>
-        <p className="text-sm text-slate-500">{t.sub}</p>
+        <h1 className="text-[19px] font-semibold tracking-tight text-slate-900">{t.title}</h1>
+        <p className="text-[13px] text-slate-500">{t.sub}</p>
       </div>
       <div className="flex items-center gap-2.5">
         <LivePill />
@@ -60,11 +60,11 @@ function Topbar() {
         >
           <ExternalLink size={13} /> Sending engine
         </a>
-        <button className="relative grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 hover:bg-slate-50">
+        <button className="relative grid h-9 w-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-500 shadow-soft transition hover:bg-slate-50 hover:text-slate-700">
           <Bell size={16} />
-          <span className="absolute right-2 top-2 h-1.5 w-1.5 rounded-full bg-rose-500" />
+          <span className="absolute right-2 top-2 h-1.5 w-1.5 rounded-full bg-rose-500 ring-2 ring-white" />
         </button>
-        <div className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 text-xs font-semibold text-white">
+        <div className="grid h-9 w-9 place-items-center rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 text-xs font-semibold text-white shadow-glow ring-2 ring-white">
           AG
         </div>
       </div>

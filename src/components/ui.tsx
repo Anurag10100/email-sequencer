@@ -15,7 +15,7 @@ export function Card({
   return (
     <div
       className={classNames(
-        'rounded-2xl border border-slate-200/80 bg-white shadow-sm',
+        'rounded-2xl border border-slate-200/70 bg-white shadow-soft ring-1 ring-slate-900/[0.02]',
         pad && 'p-5',
         className,
       )}
@@ -63,15 +63,15 @@ export function Button({
   disabled?: boolean
 }) {
   const base =
-    'inline-flex items-center justify-center gap-1.5 rounded-lg font-medium transition-all disabled:opacity-50 disabled:pointer-events-none'
+    'inline-flex items-center justify-center gap-1.5 rounded-lg font-medium transition-all duration-150 disabled:opacity-50 disabled:pointer-events-none active:scale-[.97]'
   const sizes = { sm: 'h-8 px-3 text-xs', md: 'h-9 px-3.5 text-sm' }
   const variants = {
     primary:
-      'bg-indigo-600 text-white hover:bg-indigo-500 shadow-sm shadow-indigo-600/20 active:scale-[.98]',
-    outline: 'border border-slate-300 bg-white text-slate-700 hover:bg-slate-50',
+      'bg-gradient-to-b from-indigo-500 to-indigo-600 text-white shadow-glow ring-1 ring-inset ring-white/15 hover:from-indigo-500 hover:to-indigo-500',
+    outline: 'border border-slate-300 bg-white text-slate-700 shadow-soft hover:bg-slate-50 hover:border-slate-400',
     ghost: 'text-slate-600 hover:bg-slate-100',
     subtle: 'bg-slate-100 text-slate-700 hover:bg-slate-200',
-    danger: 'bg-rose-600 text-white hover:bg-rose-500',
+    danger: 'bg-gradient-to-b from-rose-500 to-rose-600 text-white shadow-soft hover:from-rose-500 hover:to-rose-500',
   }
   return (
     <button
@@ -131,10 +131,10 @@ export function Modal({
 
   if (!open) return null
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-slate-900/40 p-4 backdrop-blur-sm sm:p-8">
+    <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-slate-950/50 p-4 backdrop-blur-md sm:p-8">
       <div
         className={classNames(
-          'animate-fade-up my-auto w-full rounded-2xl bg-white shadow-2xl',
+          'animate-fade-up my-auto w-full rounded-2xl bg-white shadow-lift ring-1 ring-slate-900/5',
           wide ? 'max-w-3xl' : 'max-w-lg',
         )}
       >
@@ -174,7 +174,7 @@ export function Field({
 }
 
 export const inputCls =
-  'w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 placeholder:text-slate-400 outline-none transition focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100'
+  'w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-800 placeholder:text-slate-400 outline-none transition focus:border-indigo-400 focus:ring-4 focus:ring-indigo-500/10 hover:border-slate-400'
 
 export function Empty({ icon, title, hint }: { icon: ReactNode; title: string; hint?: string }) {
   return (

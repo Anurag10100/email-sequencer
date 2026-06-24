@@ -28,16 +28,22 @@ function Kpi({
   tint: string
 }) {
   return (
-    <Card className="relative overflow-hidden">
-      <div className="flex items-start justify-between">
+    <Card className="group relative overflow-hidden transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lift">
+      <div
+        className="pointer-events-none absolute -right-8 -top-10 h-24 w-24 rounded-full opacity-[0.07] blur-2xl transition-opacity group-hover:opacity-20"
+        style={{ background: tint }}
+      />
+      <div className="relative flex items-start justify-between">
         <div>
-          <p className="text-xs font-medium uppercase tracking-wide text-slate-400">{label}</p>
-          <p className="mt-2 text-2xl font-semibold tracking-tight text-slate-900">{value}</p>
-          <p className="mt-1 text-xs text-slate-500">{sub}</p>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-slate-400">{label}</p>
+          <p className="tabular mt-2 text-[28px] font-bold leading-none tracking-tight text-slate-900">
+            {value}
+          </p>
+          <p className="mt-2 text-xs text-slate-500">{sub}</p>
         </div>
         <div
-          className="grid h-10 w-10 place-items-center rounded-xl"
-          style={{ background: tint + '18', color: tint }}
+          className="grid h-10 w-10 place-items-center rounded-xl text-white shadow-sm"
+          style={{ background: `linear-gradient(135deg, ${tint}, ${tint}cc)` }}
         >
           <Icon size={18} />
         </div>
