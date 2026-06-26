@@ -7,3 +7,8 @@ dist-ssr
 
 # TS build info
 *.tsbuildinfo
+
+# secrets / environment (NEVER commit — repo is public)
+.env
+.env.*
+!.env.example

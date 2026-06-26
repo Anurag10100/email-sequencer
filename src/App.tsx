@@ -13,6 +13,7 @@ import { Activity } from './components/Activity'
 import { Settings } from './components/Settings'
 import { Inbox } from './components/Inbox'
 import { Analytics } from './components/Analytics'
+import { Mailboxes } from './components/Mailboxes'
 
 const TITLES: Record<View, { title: string; sub: string }> = {
   dashboard: { title: 'Dashboard', sub: 'Campaign performance at a glance' },
@@ -20,6 +21,7 @@ const TITLES: Record<View, { title: string; sub: string }> = {
   templates: { title: 'Templates', sub: 'Reusable, personalized email content' },
   contacts: { title: 'Recipients', sub: 'Everyone in your outreach pipeline' },
   inbox: { title: 'Inbox', sub: 'Replies and high-intent recipients to action' },
+  mailboxes: { title: 'Mailboxes', sub: 'Connect Gmail / Outlook inboxes to send outbound' },
   analytics: { title: 'Analytics', sub: 'Deep performance breakdowns' },
   activity: { title: 'Activity', sub: 'Real-time open & click tracking' },
   settings: { title: 'Settings', sub: 'Sender identity, schedule & deliverability' },
@@ -85,6 +87,8 @@ function ViewRouter() {
       return <Contacts />
     case 'inbox':
       return <Inbox />
+    case 'mailboxes':
+      return <Mailboxes />
     case 'analytics':
       return <Analytics />
     case 'activity':

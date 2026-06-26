@@ -76,6 +76,19 @@ Each iteration must leave the app building (`npm run build` clean) and verified 
 - Glassmorphic topbar; refined `Card` (hairline ring + soft shadow), gradient/glow `Button`, ring focus inputs, deeper modal
 - Dashboard KPI cards: bold tabular figures, gradient icon tiles, hover lift + accent glow
 
+### Inbox connection — Phase 1 ✅ (built + plumbing verified; needs real Unipile DSN)
+- **Backend** `server/index.mjs` (Express + unipile-node-sdk): `/api/health`, `/api/inbox/connect-link`
+  (hosted-auth), `/api/inbox/accounts`, `/api/send` (DRY_RUN-aware). Secrets in gitignored `.env`.
+- **Mailboxes** view (`Mailboxes.tsx`): connect Gmail/Outlook via hosted auth, list connected inboxes,
+  per-inbox status, test-send modal, clear "not configured / DRY-RUN" states. Nav + ⌘K wired.
+- Vite `/api` proxy → :3001; scripts `server` + `dev:full` (concurrently).
+- **BLOCKED on creds:** `UNIPILE_DSN` in `.env` is still the placeholder `apiXX.unipile.com:XXXXX`.
+  User must paste their real DSN (+ verify API key) from dashboard.unipile.com, then `npm run dev:full`.
+
+### Inbox connection — Phase 2 (next)
+- Wire real sending into the sequence engine: rotate across connected inboxes, respect per-inbox daily caps,
+  throttle within the sending window, a "Live sending" switch (flips DRY_RUN), reply sync via webhook.
+
 ### Still open for a future pass
 - **Dark mode (proper)** — biggest remaining "modern SaaS" gap; needs the semantic-token migration so every surface flips cleanly, then re-expose the ⌘K/topbar toggle.
 

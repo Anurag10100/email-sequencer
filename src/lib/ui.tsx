@@ -13,6 +13,7 @@ export type View =
   | 'templates'
   | 'contacts'
   | 'inbox'
+  | 'mailboxes'
   | 'analytics'
   | 'activity'
   | 'settings'

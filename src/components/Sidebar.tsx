@@ -8,6 +8,7 @@ import {
   BarChart3,
   Settings as SettingsIcon,
   Mail,
+  AtSign,
   RotateCcw,
   Command,
   ChevronsUpDown,
@@ -27,6 +28,7 @@ const NAV: { id: View; label: string; icon: typeof LayoutDashboard; group: strin
   { id: 'templates', label: 'Templates', icon: FileText, group: 'Build' },
   { id: 'contacts', label: 'Recipients', icon: Users, group: 'Build' },
   { id: 'inbox', label: 'Inbox', icon: Inbox, group: 'Engage' },
+  { id: 'mailboxes', label: 'Mailboxes', icon: AtSign, group: 'Engage' },
   { id: 'settings', label: 'Settings', icon: SettingsIcon, group: 'Engage' },
 ]
 
